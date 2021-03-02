@@ -15,6 +15,7 @@ class BookingsController < ApplicationController
   
     # GET /bookings/new
     def new
+      @bike = Bike.find(params[:bike_id])
       @booking = Booking.new
     end
   
@@ -27,14 +28,10 @@ class BookingsController < ApplicationController
     def create
       @booking = Booking.new(booking_params)
   
-      respond_to do |format|
-        if @booking.save
-          format.html { redirect_to @booking, notice: 'Your booking was successfully created.' }
-          format.json { render :show, status: :created, location: @booking }
-        else
-          format.html { render :new }
-          format.json { render json: @booking.errors, status: :unprocessable_entity }
-        end
+      if @booking.save
+        redirect_to bike_path(params[:bike_id]), notice: 'Your booking was successfully created.'
+      else
+        render :new
       end
     end
     private
@@ -45,6 +42,6 @@ class BookingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def booking_params
-      params.require(:booking).permit(:rating, :start_at, :end_at, :bikes(bike_id), :users(user_id), :state)
+      params.require(:booking).permit(:rating, :start_at, :end_at, :state)
     end
 end
