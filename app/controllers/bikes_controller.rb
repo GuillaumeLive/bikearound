@@ -17,7 +17,7 @@ class BikesController < ApplicationController
 
   def create
     @bike = Bike.new(bike_params)
-
+    raise
     if @bike.save
       redirect_to @bike, notice: 'The bike was successfully created.'
     else
