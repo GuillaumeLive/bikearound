@@ -19,14 +19,13 @@
     <% @bikes.each do |bike| %>
       <div class="col-4">
         <div class="bike-card">
-          <div class="bike-card-image" style="background-image: url('<%= bike.picture_url %>')"></div>
           <div class="bike-card-content">
             <div class="bike-card-title">
               <h4><%= bike.description %></h4>
             </div>
             <p><%= bike.localization %></p>
             <div class="flex">
-              <i class="material-icons mr-2">euro_symbol</i> <%= bike.price_per_day %>
+              <i class="material-icons mr-2">€</i> <%= bike.price %>
             </div>
           </div>
           <div class="bike-card-actions">
