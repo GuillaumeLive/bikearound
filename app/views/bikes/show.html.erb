@@ -1,6 +1,6 @@
 <div class="container">
   <div class="card-trip">
-    <img src=@bike.image />
+    <img src="https://picsum.photos/600" />
     <div class="bike-show-card">
       <div>
         <h2><%= @bike.name %></h2>
@@ -11,4 +11,5 @@
       <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
     </div>
   </div>
+  <%= link_to 'Home page', bikes_path %> | <%= link_to 'Book this bike', new_bike_booking_path(@bike) %>
 </div>
