@@ -1,1 +1,14 @@
-<h2>my bikes</h2>
+<div class="container">
+  <div class="card-trip">
+    <img src=@bike.image />
+    <div class="bike-show-card">
+      <div>
+        <h2><%= @bike.name %></h2>
+        <p><%= @bike.description %></p>
+        <p><%= @bike.localization %></p>
+      </div>
+      <h2 class="card-trip-pricing"><%= @bike.price %>€</h2>
+      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+    </div>
+  </div>
+</div>
