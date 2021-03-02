@@ -1,5 +1,5 @@
 class Bike < ApplicationRecord
-  has_many :bookings, dependent: :destroy
+  has_many :bookings
   belongs_to :user
 
   validates :name, presence: true

@@ -12,6 +12,9 @@
       <% else %>
         <p>All <%= Bike.count %> bikes.</p>
       <% end %>
+      <div>
+        <%= link_to 'Create new bike', new_bike_path  %>
+      </div>
     </div>
   </div>
 
@@ -19,6 +22,7 @@
     <% @bikes.each do |bike| %>
       <div class="col-4">
         <div class="bike-card">
+          <%= cl_image_tag(bike.photo.key, class: 'w-100') %>
           <div class="bike-card-content">
             <div class="bike-card-title">
               <h4><%= bike.description %></h4>
@@ -32,7 +36,7 @@
             <%= link_to 'More info', bike_path(bike) %>
             <%= link_to 'Edit', edit_bike_path(bike), class: 'ml-3 text-warning' %>
             <%= link_to "Remove", bike_path(bike),
-                method: :delete, 
+                method: :delete,
                 data: { confirm: "Are you sure?" },
                 class: 'ml-3 text-danger'%>
           </div>
