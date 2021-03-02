@@ -16,27 +16,26 @@
   </div>
 
   <div class="row">
-    <% @flats.each do |bike| %>
+    <% @bikes.each do |bike| %>
       <div class="col-4">
-        <div class="flat-card">
-          <div class="flat-card-image" style="background-image: url('<%= bike.picture_url %>')"></div>
-          <div class="flat-card-content">
-            <div class="flat-card-title">
-              <h4><%= bike.name %></h4>
+        <div class="bike-card">
+          <div class="bike-card-image" style="background-image: url('<%= bike.picture_url %>')"></div>
+          <div class="bike-card-content">
+            <div class="bike-card-title">
+              <h4><%= bike.description %></h4>
             </div>
-            <p><%= bike.address %></p>
+            <p><%= bike.localization %></p>
             <div class="flex">
               <i class="material-icons mr-2">euro_symbol</i> <%= bike.price_per_day %>
             </div>
           </div>
-          <div class="flat-card-actions">
+          <div class="bike-card-actions">
             <%= link_to 'More info', bike_path(bike) %>
             <%= link_to 'Edit', edit_bike_path(bike), class: 'ml-3 text-warning' %>
             <%= link_to "Remove", bike_path(bike),
                 method: :delete, 
                 data: { confirm: "Are you sure?" },
-                class: 'ml-3 text-danger'
-            %>
+                class: 'ml-3 text-danger'%>
           </div>
         </div>
       </div>
