@@ -2,8 +2,9 @@
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 require "open-uri"
 
-file1 = URI.open('https://www.orangebikes.co.uk/images/2017_bikes/jpegs/324_Factory_3Q_2017-101.jpg')
-file2 = URI.open('https://p.vitalbmx.com/photos/products/9716/photos/17811/s1600_nagas_org.jpg?1449257146')
+file1 = URI.open('https://1.bp.blogspot.com/-il2C6vR9FCs/UKsOP5BOPZI/AAAAAAAABDs/Zw9xCFomVko/s1600/2620-paseo+2.JPG')
+file2 = URI.open('https://www.becycled.be/files/03-2021/ad35488/gazelle-stadsfietsen-1623870779_orig.jpg')
+file3 = URI.open('https://s3-us-west-2.amazonaws.com/usedphotosna/96352038_934.jpg')
 # Examples:
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
@@ -20,22 +21,34 @@ user = User.create!(
   password: "azerty")
 
 puts "creating bikes..."
+puts "First one..."
 bike_1 = Bike.new(
   user: user,
-  name: "Rockrider 201",
-  description: "XL size and red color",
-  price: "40",
-  localization: "Lille"
+  name: "PASEO Vintage Bike",
+  description: "Beautiful japanese vintage city bicycle to rent !",
+  price: "30",
+  localization: "Lambersart"
 )
 bike_1.photo.attach(io: file1, filename: 'bike.png', content_type: 'image/png')
 bike_1.save!
+puts "Second one..."
 bike_2 = Bike.new(
   user: user,
-  name: "Btwin 3",
-  description: "XXL size and red color",
-  price: "30",
-  localization: "Lille Fives"
+  name: "Gazelle Stadsfietsen 2010",
+  description: "Rent city 7-speed bike, very good state.",
+  price: "40",
+  localization: "Lille"
 )
 bike_2.photo.attach(io: file2, filename: 'bike2.png', content_type: 'image/png')
 bike_2.save!
+puts "Last one..."
+bike_3 = Bike.new(
+  user: user,
+  name: "Schwinn IZIP Electric Bike",
+  description: "Rent electric bike with new brand battery 2018, hasn't been used so much.",
+  price: "50",
+  localization: "Roubaix"
+)
+bike_3.photo.attach(io: file3, filename: 'bike3.png', content_type: 'image/png')
+bike_3.save!
 puts "Finished!"
