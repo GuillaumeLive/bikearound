@@ -1,15 +1,22 @@
 <div class="container">
-  <div class="card-trip">
-    <img src="https://picsum.photos/600" />
-    <div class="bike-show-card">
-      <div>
-        <h2><%= @bike.name %></h2>
-        <p><%= @bike.description %></p>
-        <p><%= @bike.localization %></p>
-      </div>
-      <h2 class="card-trip-pricing"><%= @bike.price %>€</h2>
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-    </div>
+  <div class="center">
+    <div class="card-trip">
+      <%= cl_image_tag(@bike.photo.key) %>
+       <div class="bike-show-card">
+        <div>
+           <h5><%= @bike.name %></h5>
+           <br>
+           <h6><%= @bike.description %></h6>
+           <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+           <br>
+           <h6><%= @bike.localization %></h6>
+           <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+           <br>
+         </div>
+         <h2 class="card-trip-pricing"><%= @bike.price %>€/Day</h2>
+         <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+       </div>
+     </div>
+     <%= link_to 'Home page', root_path %>  <%= link_to 'Book this bike', new_bike_booking_path(@bike), class: "btn btn-primary btn-sm float-right" %>
   </div>
-  <%= link_to 'Home page', root_path %> | <%= link_to 'Book this bike', new_bike_booking_path(@bike) %>
 </div>
