@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bookings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Start date</th>
+      <th>End date</th>
+      <th>Bike</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bookings.each do |booking| %>
+      <tr>
+        <td><%= booking.start_at %></td>
+        <td><%= booking.end_at %></td>
+        <td><%= booking.bike.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
