@@ -10,6 +10,7 @@ file3 = URI.open('https://s3-us-west-2.amazonaws.com/usedphotosna/96352038_934.j
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "Cleaning database..."
+Booking.destroy_all
 Bike.destroy_all
 User.destroy_all
 
@@ -45,7 +46,7 @@ puts "Last one..."
 bike_3 = Bike.new(
   user: user,
   name: "Schwinn Electric Bike",
-  description: "Electric bike with new brand battery 2018, hasn't been used so much.",
+  description: "Electric bike with new brand battery 2018.",
   price: "50",
   localization: "Roubaix"
 )
