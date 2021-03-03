@@ -13,11 +13,12 @@
            <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
            <br>
          </div>
-         <h2 class="card-trip-pricing"><%= @bike.price %>€/Day</h2>
-         <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+         <h2 class="card-trip-pricing" id="price_show"><%= @bike.price %>€/Day</h2>
+         <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" id="avatar_pic" />
+         <%= link_to 'Book this bike', new_bike_booking_path(@bike), class: "btn btn-primary btn-sm float-right", id: "btn_book" %>
          </div>
+        </div>
       </div>
-      <%= link_to 'Home page', root_path %>  <%= link_to 'Book this bike', new_bike_booking_path(@bike), class: "btn btn-primary btn-sm float-right" %>
-   </div>
+    </div>
   </div>
 </div>
