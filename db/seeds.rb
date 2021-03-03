@@ -10,6 +10,7 @@ file3 = URI.open('https://s3-us-west-2.amazonaws.com/usedphotosna/96352038_934.j
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "Cleaning database..."
+Booking.destroy_all
 Bike.destroy_all
 User.destroy_all
 
@@ -24,8 +25,8 @@ puts "creating bikes..."
 puts "First one..."
 bike_1 = Bike.new(
   user: user,
-  name: "PASEO Vintage Bike",
-  description: "Beautiful japanese vintage city bicycle to rent !",
+  name: "Paseo Vintage Bike",
+  description: "Beautiful japanese vintage city bike !",
   price: "30",
   localization: "Lambersart"
 )
@@ -34,8 +35,8 @@ bike_1.save!
 puts "Second one..."
 bike_2 = Bike.new(
   user: user,
-  name: "Gazelle Stadsfietsen 2010",
-  description: "Rent city 7-speed bike, very good state.",
+  name: "Gazelle Stadsfietsen",
+  description: "City 7-speed bike, very good state.",
   price: "40",
   localization: "Lille"
 )
@@ -44,8 +45,8 @@ bike_2.save!
 puts "Last one..."
 bike_3 = Bike.new(
   user: user,
-  name: "Schwinn IZIP Electric Bike",
-  description: "Rent electric bike with new brand battery 2018, hasn't been used so much.",
+  name: "Schwinn Electric Bike",
+  description: "Electric bike with new brand battery 2018.",
   price: "50",
   localization: "Roubaix"
 )
