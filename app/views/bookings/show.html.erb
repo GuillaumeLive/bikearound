@@ -1,0 +1,13 @@
+<div class="container my-5">
+  <div class="row">
+    <div class="col">
+      <div class="cards">
+        <% @bike.bookings.each do |booking| %>
+          <div class="card-category">
+            <%= bike.name %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
