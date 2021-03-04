@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show, :edit]
+  before_action :set_booking, only: [:show, :edit, :mark_accepted, :mark_refused]
 
   # GET /bookings
   # GET /bookings.json
@@ -36,6 +36,17 @@ class BookingsController < ApplicationController
       render :new
     end
   end
+  # route type patch url /bookings/:id/mark_accepted
+  def mark_accepted
+    @booking.update(state: 'accepted')
+    redirect_to bookings_path
+  end
+
+  def mark_refused
+    @booking.update(state: 'refused')
+    redirect_to bookings_path
+  end
+
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_booking
