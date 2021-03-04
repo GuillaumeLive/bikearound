@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-md-8">
-      <h1>Add a new booking</h1>
-        <%= render "form", booking: @booking %>
+    <div class="col-md-4">
+    	<h2>Add a new booking</h2>
+      <%= render "form", booking: @booking %>
+      <%= link_to 'Home page', root_path %>
     </div>
   </div>
-  <%= link_to 'Home page', root_path %>
 </div>
