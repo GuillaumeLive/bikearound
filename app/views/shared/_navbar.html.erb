@@ -11,15 +11,15 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <ul class="list-inline tabs-underlined">
+        <ul class="list-inline tabs-underlined" id ="navbar_tabs">
           <li>
-            <a href="#" class="tab-underlined active">Home page</a>
+            <a class="tab-underlined <%= 'active' if params[:controller] == 'bikes' %>"><%= link_to 'Home page', root_path %></a>
           </li>
           <li>
-            <a href=" " class="tab-underlined">My bookings</a>
+            <a class="tab-underlined <%= 'active' if params[:controller] == 'bookings' %>"><%= link_to 'My bookings', bookings_path %></a>
           </li>
           <li>
-            <a href="#" class="tab-underlined">My bikes</a>
+            <a class="tab-underlined">My bikes</a>
           </li>
         </ul>
         <li class="nav-item active">
