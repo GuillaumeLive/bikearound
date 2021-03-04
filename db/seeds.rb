@@ -26,6 +26,8 @@ puts "First one..."
 bike_1 = Bike.new(
   user: user,
   name: "Paseo Vintage Bike",
+  category: 'City bike',
+  size: 'Woman',
   description: "Beautiful japanese vintage city bike !",
   price: "30",
   localization: "Lambersart"
@@ -36,6 +38,8 @@ puts "Second one..."
 bike_2 = Bike.new(
   user: user,
   name: "Gazelle Stadsfietsen",
+  category: 'City bike',
+  size: 'Man',
   description: "City 7-speed bike, very good state.",
   price: "40",
   localization: "Lille"
@@ -46,6 +50,8 @@ puts "Last one..."
 bike_3 = Bike.new(
   user: user,
   name: "Schwinn Electric Bike",
+  category: 'VTT',
+  size: 'Man',
   description: "Electric bike with new brand battery 2018.",
   price: "50",
   localization: "Roubaix"
