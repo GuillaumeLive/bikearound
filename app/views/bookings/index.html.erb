@@ -1,29 +1,66 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Bookings</h1>
-
-<table>
-  <thead>
+<div class="container">
+<h2>My bookings</h2>
+<table class="table">
+  <thead class="thead-dark">
     <tr>
-      <th>Start date</th>
-      <th>End date</th>
-      <th>Bike</th>
-      <th>State</th>
+      <th scope="col">#</th>
+      <th scope="col">Start date</th>
+      <th scope="col">End date</th>
+      <th scope="col">Bike</th>
+      <th scope="col">State</th>
     </tr>
   </thead>
-
   <tbody>
     <% @bookings.each do |booking| %>
       <tr>
-        <td><%= booking.start_at %></td>
-        <td><%= booking.end_at %></td>
-        <td><%= booking.bike.name %></td>
-        <td><%= booking.state %></td>
-        <td><%= link_to 'accepted', mark_accepted_booking_path(booking), method: :patch %>
-        <td><%= link_to 'refused', mark_refused_booking_path(booking), method: :patch %>
+        <th scope="row"> <%= booking.id %> </th>
+        <td> <%= booking.start_at %> </td>
+        <td> <%= booking.end_at  %> </td>
+        <td> <%= booking.bike.name %> </td>
+        <td> <%= booking.state %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<h2>My bikes booked</h2>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Start date</th>
+      <th scope="col">End date</th>
+      <th scope="col">Bike</th>
+      <th scope="col">State</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @bookings_on_my_bikes.each do |booking| %>
+      <tr>
+        <th scope="row"> <%= booking.id %> </th>
+        <td> <%= booking.start_at %> </td>
+        <td> <%= booking.end_at  %> </td>
+        <td> <%= booking.bike.name %> </td>
+        <td>
+          <% if booking.state == 'accepted' %>
+            <i class="far fa-check-square"></i>
+          <% elsif booking.state == 'refused' %>
+            <i class="far fa-times-circle"></i>
+          <% else %>
+            <%= booking.state %>
+          <% end %>
+        </td>
+        <% if booking.state == 'pending' %>
+          <td><%= link_to 'accepted', mark_accepted_booking_path(booking), method: :patch %>
+          <td><%= link_to 'refused', mark_refused_booking_path(booking), method: :patch %>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 <%= link_to 'Home page', root_path %>
+</div>
 <br>
