@@ -5,6 +5,8 @@ class BookingsController < ApplicationController
   # GET /bookings.json
   def index
     @bookings = Booking.where({ user: current_user})
+    @bookings_on_my_bikes = current_user.bikes.map {|bike| bike.bookings}.flatten.sort_by{|booking| booking.id}.reverse
+    
   end
 
   # GET /bookings/1
