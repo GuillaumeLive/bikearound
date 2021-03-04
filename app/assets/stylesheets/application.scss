@@ -56,6 +56,11 @@
     color: red;
     text-decoration: none;
   }
+  .card-overflow {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
 }
 
 .card-trip{
