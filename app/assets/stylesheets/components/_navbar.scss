@@ -22,11 +22,18 @@
   margin: 8px 16px;
   opacity: .4;
   cursor: pointer;
-  text-decoration: none;
   border-bottom: 4px solid transparent;
+  text-decoration: none;
+  a {
+    text-decoration: none;
+  }
+  a:hover {
+    opacity: 0.6;
+  }
 }
 
 .tabs-underlined .tab-underlined.active {
   opacity: 1;
   border-bottom: 3px solid #555555;
 }
+
