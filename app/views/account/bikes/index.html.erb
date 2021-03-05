@@ -22,8 +22,12 @@
               </div>
               <div class="bike-card-actions">
                 <%= link_to 'More informations', bike_path(bike) %>
-                <%= link_to 'Update', edit_bike_path(bike) %>
-                <%= link_to 'Delete', bike_path(bike), method: :delete %>
+                <%= link_to edit_bike_path(bike) do %>
+                  <i class="far fa-edit"></i>
+                <% end %>
+                <%= link_to bike_path(bike), method: :delete do %>
+                  <i class="far fa-trash-alt"></i>
+                <% end %>
               </div>
             </div>
           </div>
