@@ -7,7 +7,12 @@
   <div class="row">
     <div class="col-12 col-md-8">
       <div class="row">
-        <% @bikes.each do |bike| %>
+        <div class="col-6">
+          <div class="bike-card">
+            <h5>+</h5>
+          </div>
+        </div>
+          <% @bikes.each do |bike| %>
           <div class="col-6">
             <div class="bike-card">
               <%= cl_image_tag(bike.photo.key) %>
