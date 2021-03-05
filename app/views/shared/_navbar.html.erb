@@ -29,7 +29,7 @@
             <a class="tab-underlined <%= 'active' if params[:controller] == 'bookings' %>"><%= link_to 'My bookings', bookings_path %></a>
           </li>
           <li>
-            <a class="tab-underlined">My bikes</a>
+            <%= link_to 'My bikes', account_bikes_path, class: 'tab-underlined' %>
           </li>
         </ul>
         <li class="nav-item active">
