@@ -1,0 +1,12 @@
+<%= simple_form_for([@bike]) do |f| %>
+    <div class="container">
+    <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+
+
+        <%= f.input :name %>
+        <%= f.input :price %>
+        <%= f.input :photo %>
+        <%= f.button :submit, "Go", class: "btn btn-primary" %>
+    </div>
+    </div>
+<% end %>

@@ -1,5 +1,5 @@
 class Bike < ApplicationRecord
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
   belongs_to :user
   CATEGORIES = ['City bike', 'VTT', 'VTC', 'Race', 'Travel']
   SIZES = ['Man', 'Woman', 'Child']
@@ -17,4 +17,12 @@ class Bike < ApplicationRecord
 
   geocoded_by :localization
   after_validation :geocode, if: :will_save_change_to_localization?
+
+  include PgSearch::Model
+  pg_search_scope :search_by_city,
+    against: [ :localization ],
+    using: {
+      tsearch: { prefix: true }
+    }
+
 end
