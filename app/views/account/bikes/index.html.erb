@@ -1,6 +1,7 @@
 <div class="banner">
-  <div class="container text-center">
+  <div class="d-flex align-items-center flex-column">
     <h1>Find the bike you need among our <%= Bike.count %> bikes</h1>
+    <%= link_to 'Add a new bike', new_bike_path, class: 'btn btn-primary d-flex align-items-center' %>
   </div>
 </div>
 <div class="container pt-4">
