@@ -1,12 +1,22 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "http://cdn.onlinewebfonts.com/svg/img_561467.png" %>
+  <div class="navsearch">
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag "http://cdn.onlinewebfonts.com/svg/img_561467.png" %>
     <% end %>
-
+    
+    <%= form_tag bikes_path, method: :get, class: "form-inline ml-4" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Search by city..."
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+  
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
