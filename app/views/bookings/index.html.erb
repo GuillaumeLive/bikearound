@@ -10,6 +10,8 @@
       <th scope="col">End date</th>
       <th scope="col">Bike</th>
       <th scope="col">State</th>
+      <th scope="col"></th>
+
     </tr>
   </thead>
   <tbody>
@@ -20,6 +22,11 @@
         <td> <%= booking.end_at  %> </td>
         <td> <%= booking.bike.name %> </td>
         <td> <%= booking.state %> </td>
+        <td>
+          <%= link_to booking_path(booking), method: :delete do %>
+            <%= image_tag "https://image.flaticon.com/icons/png/512/70/70388.png", class: 'bin-icon' %>
+          <%  end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -33,8 +40,6 @@
       <th scope="col">End date</th>
       <th scope="col">Bike</th>
       <th scope="col">State</th>
-      <th scope="col"></th>
-      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
